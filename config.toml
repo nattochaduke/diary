@@ -1,0 +1,22 @@
+baseurl      = "https://nattochaduke.github.io/diary"
+publishDir = "test"
+theme = "simple-blog"
+title = "日記"
+copyright = "© 2020 copyright text."
+paginate = 3
+languageCode = "en"
+DefaultContentLanguage = "jp"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/posts"
+    weight = 10
+
+[taxonomies]
+category = "categories"
+tag = "tags"

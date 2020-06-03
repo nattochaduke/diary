@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 日記</title>
+    <link>https://nattochaduke.github.io/diary/tags/</link>
+    <description>Recent content in Tags on 日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2020 copyright text.</copyright>
+    <lastBuildDate>Tue, 02 Jun 2020 11:49:23 +0900</lastBuildDate>
+    
+	<atom:link href="https://nattochaduke.github.io/diary/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quantum Information</title>
+      <link>https://nattochaduke.github.io/diary/tags/quantum-information/</link>
+      <pubDate>Tue, 02 Jun 2020 11:49:23 +0900</pubDate>
+      
+      <guid>https://nattochaduke.github.io/diary/tags/quantum-information/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
