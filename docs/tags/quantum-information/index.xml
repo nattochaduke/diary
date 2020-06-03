@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2020 copyright text.</copyright>
-    <lastBuildDate>Tue, 02 Jun 2020 11:49:23 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2020 14:54:55 +0900</lastBuildDate>
     
 	<atom:link href="https://nattochaduke.github.io/diary/tags/quantum-information/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>量子情報2</title>
+      <link>https://nattochaduke.github.io/diary/posts/2020_06_03/</link>
+      <pubDate>Wed, 03 Jun 2020 14:54:55 +0900</pubDate>
+      
+      <guid>https://nattochaduke.github.io/diary/posts/2020_06_03/</guid>
+      <description>量子情報2日目 (Nielsen and Chuang, Quantum Computation and Quantum Information) $$ \def\bra#1{\mathinner{\left\langle{#1}\right|}} \def\ket#1{\mathinner{\left|{#1}\right\rangle}} \def\braket#1#2{\mathinner{\left\langle{#1}\middle|#2\right\rangle}} $$
+1.3.2 Multiple qubit gates (続きというか補足) ところで$\ket {01}$のような状態は$\ket 0$と$\ket 1$のテンソル積で表現する.つまり
+$\ket c = \alpha \ket 0 + \beta \ket 1, \ket t = \gamma \ket 0 + \delta \ket 1$
+であるとき,
+$$\ket {ct} = \ket c \otimes \ket t = \alpha\gamma \ket {0 0} + \alpha \delta \ket {0 1} + \beta \gamma \ket{1 0} + \beta \delta \ket {1 1}$$</description>
+    </item>
     
     <item>
       <title>量子情報1</title>

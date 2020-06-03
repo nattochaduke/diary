@@ -1,0 +1,82 @@
+<!doctype html>
+<script>
+    MathJax = {
+        tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+    };
+</script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>量子情報2 - 日記</title>
+    <link href="https://nattochaduke.github.io/diary/css/bootstrap.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+<header class="text-center bg-dark pt-5 pb-5 col-12">
+  
+  <h1 class="text-white pt-4 pb-3">量子情報2</h1>
+  <p class="text-secondary">June 3, 2020</p>
+  
+  <a href="https://nattochaduke.github.io/diary/tags/quantum-information/" class="text-info">#Quantum Information</a>
+  
+</header>
+<div class="container">
+  <div class="row pt-5">
+    <div class="col-12">
+      <h3 id="量子情報2日目-nielsen-and-chuang-quantum-computation-and-quantum-information">量子情報2日目 (Nielsen and Chuang, Quantum Computation and Quantum Information)</h3>
+<p>$$
+\def\bra#1{\mathinner{\left\langle{#1}\right|}}
+\def\ket#1{\mathinner{\left|{#1}\right\rangle}}
+\def\braket#1#2{\mathinner{\left\langle{#1}\middle|#2\right\rangle}}
+$$</p>
+<h4 id="132-multiple-qubit-gates-続きというか補足">1.3.2 Multiple qubit gates (続きというか補足)</h4>
+<p>ところで$\ket {01}$のような状態は$\ket 0$と$\ket 1$のテンソル積で表現する.つまり</p>
+<p>$\ket c = \alpha \ket 0 + \beta \ket 1, \ket t = \gamma \ket 0 + \delta \ket 1$</p>
+<p>であるとき,</p>
+<p>$$\ket {ct} = \ket c \otimes \ket t = \alpha\gamma \ket {0 0} + \alpha \delta \ket {0 1} + \beta \gamma \ket{1 0} + \beta \delta \ket {1 1}$$</p>
+<p>である.</p>
+<p>1qubitの状態$\alpha \ket 0 + \beta \ket 1$を$(\alpha, \beta)^T$と表現したが,</p>
+<p>2qubitの状態 $\ket c \otimes \ket t = \alpha\gamma \ket {0 0} + \alpha \delta \ket {0 1} + \beta \gamma \ket{1 0} + \beta \delta \ket {1 1}$は$(\alpha\gamma, \alpha \delta, \beta \gamma, \beta \delta)^T$と表現できる.</p>
+<p>例えば</p>
+<p>$$\ket { 0 0} = (1, 0, 0, 0)^T$$</p>
+<p>$$\ket {01} = (0, 1, 0, 0)^T$$</p>
+<p>$$\ket {1 0} = (0, 0, 1, 0)^T$$</p>
+<p>$$\ket {1 1} = (0, 0, 0, 1)^T$$</p>
+<p>となって,CNOTは</p>
+<p>$$\left[\begin{array}{} 1 &amp; 0 &amp; 0 &amp; 0 \ 0 &amp; 1 &amp; 0 &amp; 0 \ 0 &amp; 0 &amp; 0 &amp; 1 \ 0 &amp; 0 &amp; 1 &amp; 0\end{array} \right]$$</p>
+<p>と行列表現できる.</p>
+<h4 id="133-measurements-in-bases-other-than-the-computational-basis">1.3.3 Measurements in bases other than the computational basis</h4>
+<p>$\ket 0$や$\ket 1$のことをcomputational basisというのだった. しかし例えば$\ket + = (\ket 0 + \ket 1) / \sqrt{2}, \ket 0 = (\ket 0 - \ket 1)/ \sqrt{2}$ としても</p>
+<p>$$\psi = \alpha \ket 0 + \beta \ket 1 = \frac{\alpha + \beta}{\sqrt{2}} \ket + + \frac{\alpha - \beta}{\sqrt{2}} \ket -$$</p>
+<p>のように任意の$\psi$は$\ket +, \ket -$の線型結合で書ける.</p>
+<p>$\ket +, \ket -$をcomputational basisとして考えて観測を行うこともできて,そのとき$+, -$が観測される確率はそれぞれ$|\alpha + \beta|^2/2, |\alpha - \beta|^2/2$, である. より一般的に,$\ket a, \ket  b$という基底があれば$\alpha \ket a + \beta \ket b$によって任意の$\psi$が書ける(これが基底の定義だ). さらに$\ket a, \ket b$が正規直交であるとき,$a, b$を観測する確率がそれぞれ$|\alpha|^2, |\beta|^2$となる. 多qubitの系は任意の基底で理論上は観測できるが,実際には必ずしもかんたんではない. 基底を変えることでより簡便に実験結果を記述できるようになるらしい・・・</p>
+
+    </div>
+  </div>
+  <div class="row pt-5 pb-5">
+    <div class="col-6 text-left">
+    
+      <a class="text-reset" href="https://nattochaduke.github.io/diary/posts/2020_06_02/">&lt; 量子情報1</a>
+    
+    </div>
+    <div class="col-6 text-right">
+    
+    </div>
+  </div>
+</div>
+<footer class="text-center bg-dark pt-5 col-12">
+  <a href="https://nattochaduke.github.io/diary/" class="text-muted">Home</a>
+  
+  <a href="../../diary/posts" class="text-muted pl-4">About</a>
+  
+  <p class="pb-4 pt-4 mb-0">© 2020 copyright text. <a href="https://gohugo.io/" class="text-reset">hugo</a> <a href="https://10mohi6.tk" class="text-reset">10mohi6</a> <a href="https://github.com/10mohi6/hugo-theme-simple-blog" class="text-reset">simple-blog</a></p>
+</footer>
+</body>
+</html>
