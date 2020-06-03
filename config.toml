@@ -1,5 +1,5 @@
 baseurl      = "https://nattochaduke.github.io/diary"
-publishDir = "test"
+publishDir = "docs"
 theme = "simple-blog"
 title = "日記"
 copyright = "© 2020 copyright text."
