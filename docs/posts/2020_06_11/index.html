@@ -1,0 +1,125 @@
+<!doctype html>
+<script>
+    MathJax = {
+        tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+    };
+</script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>量子情報5 - 日記</title>
+    <link href="https://nattochaduke.github.io/diarycss/bootstrap.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+<header class="text-center bg-dark pt-5 pb-5 col-12">
+  
+  <h1 class="text-white pt-4 pb-3">量子情報5</h1>
+  <p class="text-secondary">June 11, 2020</p>
+  
+  <a href="https://nattochaduke.github.io/diarytags/quantum-information/" class="text-info">#Quantum Information</a>
+  
+</header>
+<div class="container">
+  <div class="row pt-5">
+    <div class="col-12">
+      <h3 id="量子情報5日目-nielsen-and-chuang-quantum-computation-and-quantum-information">量子情報5日目 (Nielsen and Chuang, Quantum Computation and Quantum Information)</h3>
+<p>$$
+\def\bra#1{\mathinner{\left\langle{#1}\right|}}
+\def\ket#1{\mathinner{\left|{#1}\right\rangle}}
+\def\braket#1#2{\mathinner{\left\langle{#1}\middle|#2\right\rangle}}
+$$</p>
+<h3 id="-225-projective-measurements">#### 2.2.5 Projective measurements</h3>
+<p>量子情報では<em>projective measurements</em>という公準3の特別な場合(実際にはユニタリ変換を考えれば同値, Sect. 2.2.8)を扱うことが多い.</p>
+<p><strong>Projective measurements</strong> projective measurementは<em>observable</em>と呼ばれるエルミート作用素$M$で,</p>
+<p>$$M = \sum_m m P_m$$</p>
+<p>というスペクトル分解を持つ. $P_m$は$M$の固有値$m$に対応する固有空間への射影作用素である.</p>
+<hr>
+<p><em>おさらい</em></p>
+<p><strong>スペクトル分解</strong></p>
+<p>エルミート行列$A$の固有値は実数であり,$\lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n$とする.</p>
+<p>対応する単位固有ベクトル$x_i$を$x_j^* x_i = \delta_{ij}$を満たすように選べて,</p>
+<p>$$A(x_1 &hellip; x_n) = (x &hellip;, x_n) \text{diag}(\lambda_1 &hellip;., \lambda_n)$$</p>
+<p>$(x_1 &hellip; x_n)$はユニタリ行列($\Leftrightarrow$列が正規直交基底をなす)だから,</p>
+<p>$$A = (x_1 &hellip; x_n) \text{diag} (\lambda_1, &hellip;, \lambda_n) (x^*_1 , &hellip;, x^*_n)^T \ = \sum_i \lambda_i x_i x_i^*$$</p>
+<p>が成立.</p>
+<p>$P_i = x_i x^*_i \in M_n(\mathbb{C})$とすると</p>
+<p>$$A = \sum_i \lambda_i P_i$$</p>
+<p>これは</p>
+<p>$$P_i^2 = P_i$$</p>
+<p>$$P_i^* = P_i$$</p>
+<p>$$P_i P_j = 0$$</p>
+<p>を満たし,$A$のスペクトル分解という. (<a href="http://www.math.s.chiba-u.ac.jp/~nagisa/lecture04/fa3.pdf">http://www.math.s.chiba-u.ac.jp/~nagisa/lecture04/fa3.pdf</a>)</p>
+<h4 id="射影作用素">射影作用素</h4>
+<p>線形空間とその部分空間$W \subset V$があって,$dim(W) = k, dim(V) = d$とする.</p>
+<p>$V$の正規直交基底$\ket 1, \ket 2, &hellip;, \ket d$で,</p>
+<p>$\ket 1, \ket 2,&hellip;, \ket k$が$W$の正規直交基底でもあるものが存在する.</p>
+<p>$$P = \sum_i^k \ket i \bra i$$</p>
+<p>を$W$への射影作用素(projector)という. (2.1.6 Adjoints and Hermitian operators)</p>
+<hr>
+<p>$\ket \psi$を観測するとき結果$m$を得る確率は
+$$p(m ) = \bra \psi P_m \ket \psi$$</p>
+<p>観測によって変化した状態は</p>
+<p>$$\frac{P_m \ket \psi}{\sqrt{p(m)}}$$</p>
+<p>である.</p>
+<p>projective measurementsには様々な良い性質がある.その一つ平均値の計算がかんたんなことである.</p>
+<p>$$\begin{aligned}E(M) &amp;= \sum_m mp(m) \ &amp;=\sum_m m\bra \psi P_m \ket \psi \ &amp;= \bra \psi \left(\sum_m mP_m \right) \ket \psi \ &amp;= \bra \psi M \ket \psi\end{aligned}$$</p>
+<p>$E(M) = <!-- raw HTML omitted -->$と略して書くこともある.</p>
+<p>単に$\sum_m P_m = I, P_m P_{m&rsquo;} = \delta_{mm&rsquo;}P_m$なる$P_m$を並べることで$M=\sum_m mP_m$でprojective measurementを行うことを暗示したり,&ldquo;measure in basis $\ket m$&quot;で$P_m = \ket m \bra m$でprojective measurementを行うことを暗示したりする.</p>
+<p>1-qubitの系でのprojective measurementの例を示す.</p>
+<p>Pauliの$Z$ゲート</p>
+<p>$$Z = \left(\begin{array}{} 1 &amp; 0 \ 0 &amp; -1 \end{array} \right)$$</p>
+<p>をprojective measurementと考えると,これは固有値$+1$と$-1$を持ち,対応する固有ベクトルは$(1, 0)^T, (0, 1)^T$すなわち$\ket 0, \ket 1$である.</p>
+<p>$\ket \psi = (\ket 0 + \ket 1) / \sqrt{2}$を観測すれば+1が$\braket{\psi}{0}\braket{0}{\psi} = 1 / 2$の確率で得られ,$-1$が同様に$1/2$の確率で偉える.</p>
+<h4 id="226-povm-measurements">2.2.6 POVM measurements</h4>
+<p>POVMは&rsquo;Positive Operator-Valued Measure&rsquo;の略. 観測後の状態に興味がなく,観測結果かその統計量だけに興味があるときに使う.  公準3から,</p>
+<p>$M_m$という観測が$\ket \psi$に作用したとき$m$が得られる確率は</p>
+<p>$$p(m) = \bra \psi M^\dagger_m M_m\ket \psi$$</p>
+<p>$$E_m = M^\dagger_m M_m$$</p>
+<p>と定義すると,$E_m$は正値行列で$\sum_m E_m = I, p(m) = \bra \psi E_m \ket \psi$.</p>
+<p>$E_m$をPOVM elementといい,${E_m}$をPOVMという.</p>
+<p>Projective measurementでは$P_mP_{m&rsquo;} = \delta_{mm&rsquo;}P_m$だから$E_m = P_m$が成立.</p>
+<h3 id="24-the-density-operator">2.4 The density operator</h3>
+<p>これまでは系のある状態をstate vector (状態ベクトル)として扱ってきたが,数学的には同値だが異なった表現の方法にdensity operatorやdensity matrixと呼ばれる方法がある.</p>
+<h4 id="241-ensembles-of-quantum-states">2.4.1 Ensembles of quantum states</h4>
+<p>density operator (密度作用素)表現は状態が完全には判明していない系を表現するのに便利である. ある系がいくつかの${\ket {\psi_i}}$うちのどれか一つであり,その確率は${p_i}$とする.</p>
+<p>${p_i, \ket {\psi_i}}$を<em>ensemble of pure states</em>と呼ぶ.</p>
+<p>$$ \rho = \sum_i p_i \ket {\psi_i} \bra {\psi_i}$$</p>
+<p>によってdensity operatorあるいはdensity matrix $\rho$を定める.</p>
+<p>例えば閉じた系でのユニタリ作用素$U$を考える. 系の最初の状態が確率$p_i$で$\ket {\psi_i}$であるとき,$U$が適用されたあとの系の状態は確率$p_i$で$U\ket {\psi_i}$である.よって密度作用素の時間発展は</p>
+<p>$$\rho = \sum_i p_i \ket{\psi_i} \bra{\psi_i} \rightarrow^U \sum_i p_i U\ket {\psi_i} \bra{\psi_i} U^{\dagger} = U\rho U^\dagger$$</p>
+<p>となる. 観測作用素$M_m$も密度作用素表現によく馴染む.</p>
+<p>$\ket {\psi_i}$を観測して$m$が得られる確率は</p>
+<p>$$p(m|i) = \bra {\psi_i} M^\dagger_m M_m \ket{\psi_i} = \text{tr}(M^\dagger_m M_m \ket{\psi_i}\bra{\psi_i})$$</p>
+<p>よって</p>
+<p>$$p(m) = \sum_i p(m|i)p_i = \text{tr}(M^\dagger_m M_m \rho) $$</p>
+
+    </div>
+  </div>
+  <div class="row pt-5 pb-5">
+    <div class="col-6 text-left">
+    
+      <a class="text-reset" href="https://nattochaduke.github.io/diary/posts/2020_06_09/">&lt; 量子情報4</a>
+    
+    </div>
+    <div class="col-6 text-right">
+    
+    </div>
+  </div>
+</div>
+<footer class="text-center bg-dark pt-5 col-12">
+  <a href="https://nattochaduke.github.io/diary" class="text-muted">Home</a>
+  
+  <a href="../../diary/posts" class="text-muted pl-4">About</a>
+  
+  <p class="pb-4 pt-4 mb-0">© 2020 copyright text. <a href="https://gohugo.io/" class="text-reset">hugo</a> <a href="https://10mohi6.tk" class="text-reset">10mohi6</a> <a href="https://github.com/10mohi6/hugo-theme-simple-blog" class="text-reset">simple-blog</a></p>
+</footer>
+</body>
+</html>

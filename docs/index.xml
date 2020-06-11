@@ -7,10 +7,66 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2020 copyright text.</copyright>
-    <lastBuildDate>Wed, 03 Jun 2020 14:54:55 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2020 12:25:48 +0900</lastBuildDate>
     
 	<atom:link href="https://nattochaduke.github.io/diary/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>量子情報5</title>
+      <link>https://nattochaduke.github.io/diary/posts/2020_06_11/</link>
+      <pubDate>Thu, 11 Jun 2020 12:25:48 +0900</pubDate>
+      
+      <guid>https://nattochaduke.github.io/diary/posts/2020_06_11/</guid>
+      <description>量子情報5日目 (Nielsen and Chuang, Quantum Computation and Quantum Information) $$ \def\bra#1{\mathinner{\left\langle{#1}\right|}} \def\ket#1{\mathinner{\left|{#1}\right\rangle}} \def\braket#1#2{\mathinner{\left\langle{#1}\middle|#2\right\rangle}} $$
+#### 2.2.5 Projective measurements 量子情報ではprojective measurementsという公準3の特別な場合(実際にはユニタリ変換を考えれば同値, Sect. 2.2.8)を扱うことが多い.
+Projective measurements projective measurementはobservableと呼ばれるエルミート作用素$M$で,
+$$M = \sum_m m P_m$$
+というスペクトル分解を持つ. $P_m$は$M$の固有値$m$に対応する固有空間への射影作用素である.
+ おさらい
+スペクトル分解
+エルミート行列$A$の固有値は実数であり,$\lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n$とする.
+対応する単位固有ベクトル$x_i$を$x_j^* x_i = \delta_{ij}$を満たすように選べて,
+$$A(x_1 &amp;hellip; x_n) = (x &amp;hellip;, x_n) \text{diag}(\lambda_1 &amp;hellip;., \lambda_n)$$
+$(x_1 &amp;hellip; x_n)$はユニタリ行列($\Leftrightarrow$列が正規直交基底をなす)だから,
+$$A = (x_1 &amp;hellip; x_n) \text{diag} (\lambda_1, &amp;hellip;, \lambda_n) (x^*_1 , &amp;hellip;, x^*_n)^T \ = \sum_i \lambda_i x_i x_i^*$$</description>
+    </item>
+    
+    <item>
+      <title>量子情報4</title>
+      <link>https://nattochaduke.github.io/diary/posts/2020_06_09/</link>
+      <pubDate>Tue, 09 Jun 2020 09:20:49 +0900</pubDate>
+      
+      <guid>https://nattochaduke.github.io/diary/posts/2020_06_09/</guid>
+      <description>量子情報4日目 (Nielsen and Chuang, Quantum Computation and Quantum Information) $$ \def\bra#1{\mathinner{\left\langle{#1}\right|}} \def\ket#1{\mathinner{\left|{#1}\right\rangle}} \def\braket#1#2{\mathinner{\left\langle{#1}\middle|#2\right\rangle}} $$
+2.2 The postulates of quantum mechanics 公準1 ある物理系に紐付けられた内積の入った複素ベクトル空間をその系のstate space状態空間という. その系はその状態空間の単位ベクトルであるstate vectorによって完全に記述できる.
+公準2 閉じた系の時間発展はユニタリ変換であり,離散時間の時間発展はユニタリ行列$U$によって
+$$\ket {\psi&amp;rsquo;} = U\ket \psi$$
+と書ける.また連続時間の場合には
+$$i\frac{d\ket \psi}{dt} = H \ket \psi$$
+と書ける.この方程式の解は
+$$U(t_1, t_2) = \exp{\frac{-iH(t_2-t_1)}{\hbar}}$$
+であり,$U$はユニタリである.
+2.2.3 Quantum measurement 閉じた系の量子力学的時間発展はユニタリ作用素で記述できるが,中で何が起きているのか観測するとその系は開く. 観測を定式化することを考える.
+公準3 量子観測は${M_m}$という観測作用素の集合によって表現される. $M_m$は状態空間に作用する. $m$は観測で得られる結果で,$\ket \psi$を観測して$m$が得られる確率は
+$$p(m) = \bra{\psi} M^\dagger _m M_m \ket {\psi}$$
+であり,観測後の状態空間は
+$$\frac{M_m \ket {\psi}}{\sqrt{\bra{\psi} M^\dagger _m M_m \ket {\psi}}} \tag{2.</description>
+    </item>
+    
+    <item>
+      <title>量子情報3</title>
+      <link>https://nattochaduke.github.io/diary/posts/2020_06_05/</link>
+      <pubDate>Thu, 04 Jun 2020 14:54:55 +0900</pubDate>
+      
+      <guid>https://nattochaduke.github.io/diary/posts/2020_06_05/</guid>
+      <description>量子情報3日目 (Nielsen and Chuang, Quantum Computation and Quantum Information) $$ \def\bra#1{\mathinner{\left\langle{#1}\right|}} \def\ket#1{\mathinner{\left|{#1}\right\rangle}} \def\braket#1#2{\mathinner{\left\langle{#1}\middle|#2\right\rangle}} $$
+注意:
+$\ket \phi \otimes \ket \psi$はテンソル積. 本では単に$\ket \phi \ket \psi$とも書く(p.62 Figure 2.1)
+1.3. 5 Qubit copying circut? あるqubit $\ket \psi = a \ket 0 + b \ket 1$があるとして,それを２つ並べたqubitを作れるか試す.
+古典的なビット($(a, b) = (1, 0) or (0, 1)$)であれば,CNOT($\ket {\psi 0}$)とすれば$\ket {00} \mapsto \ket{00}, \ket {10} \mapsto \ket{11}$より,確かにコピーが実現できている. しかし量子ビットであるとき,
+$\ket \psi \ket 0 = (a, 0, b, 0)^T$. CNOTを作用させると</description>
+    </item>
     
     <item>
       <title>量子情報2</title>

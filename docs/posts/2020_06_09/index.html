@@ -1,0 +1,113 @@
+<!doctype html>
+<script>
+    MathJax = {
+        tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+    };
+</script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>量子情報4 - 日記</title>
+    <link href="https://nattochaduke.github.io/diarycss/bootstrap.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+<header class="text-center bg-dark pt-5 pb-5 col-12">
+  
+  <h1 class="text-white pt-4 pb-3">量子情報4</h1>
+  <p class="text-secondary">June 9, 2020</p>
+  
+  <a href="https://nattochaduke.github.io/diarytags/quantum-information/" class="text-info">#Quantum Information</a>
+  
+</header>
+<div class="container">
+  <div class="row pt-5">
+    <div class="col-12">
+      <h3 id="量子情報4日目-nielsen-and-chuang-quantum-computation-and-quantum-information">量子情報4日目 (Nielsen and Chuang, Quantum Computation and Quantum Information)</h3>
+<p>$$
+\def\bra#1{\mathinner{\left\langle{#1}\right|}}
+\def\ket#1{\mathinner{\left|{#1}\right\rangle}}
+\def\braket#1#2{\mathinner{\left\langle{#1}\middle|#2\right\rangle}}
+$$</p>
+<h3 id="22-the-postulates-of-quantum-mechanics">2.2 The postulates of quantum mechanics</h3>
+<h4 id="公準1">公準1</h4>
+<p>ある物理系に紐付けられた内積の入った複素ベクトル空間をその系の<em>state space</em>状態空間という. その系はその状態空間の単位ベクトルである<em>state vector</em>によって完全に記述できる.</p>
+<h3 id="公準2">公準2</h3>
+<p>閉じた系の時間発展はユニタリ変換であり,離散時間の時間発展はユニタリ行列$U$によって</p>
+<p>$$\ket {\psi&rsquo;} = U\ket \psi$$</p>
+<p>と書ける.また連続時間の場合には</p>
+<p>$$i\frac{d\ket \psi}{dt} = H \ket \psi$$</p>
+<p>と書ける.この方程式の解は</p>
+<p>$$U(t_1, t_2) = \exp{\frac{-iH(t_2-t_1)}{\hbar}}$$</p>
+<p>であり,$U$はユニタリである.</p>
+<h4 id="223-quantum-measurement">2.2.3 Quantum measurement</h4>
+<p>閉じた系の量子力学的時間発展はユニタリ作用素で記述できるが,中で何が起きているのか観測するとその系は開く. 観測を定式化することを考える.</p>
+<h3 id="公準3">公準3</h3>
+<p>量子観測は${M_m}$という観測作用素の集合によって表現される. $M_m$は状態空間に作用する. $m$は観測で得られる結果で,$\ket \psi$を観測して$m$が得られる確率は</p>
+<p>$$p(m) = \bra{\psi}  M^\dagger _m M_m \ket {\psi}$$</p>
+<p>であり,観測後の状態空間は</p>
+<p>$$\frac{M_m \ket {\psi}}{\sqrt{\bra{\psi}  M^\dagger _m M_m \ket {\psi}}} \tag{2.93}$$</p>
+<p>となる.</p>
+<p>$$\sum_m M^\dagger_m M_m = I \tag{2.94}$$</p>
+<p>さらに</p>
+<p>$$1 = \sum_m p(m) = \sum_m \bra{\psi}  M^\dagger _m M_m \ket {\psi} \tag{2.95}$$</p>
+<p>である.</p>
+<hr>
+<p>単純かつ重要な観測の例にqubitのcomputational basisにおける観測がある.</p>
+<p>$M_0 = \ket 0 \bra 0, M_1 = \ket 1 \bra 1$とする.</p>
+<p>$$M_0 = (1, 0)^T (1, 0) = \left(\begin{array}{} 1 &amp; 0 \ 0 &amp; 0 \end{array}\right)=M_0^\dagger = M_0^2 $$</p>
+<p>$M_1$も同様で,$I = M_0 + M_1 = \sum_m M^\dagger_m M$がたしかに成立する.</p>
+<p>$\ket \psi = a\ket 0 + b \ket 1$であるとき,0, 1が観測される確率はそれぞれ</p>
+<p>$$p(0) = (a*, b*) \left(\begin{array}{} 1 &amp; 0 \ 0 &amp; 0 \end{array} \right) (a, b)^T = (a*, b*) (a, 0)^T = |a|^2$$</p>
+<p>$$p(1) = |b|^2$$</p>
+<p>さらに観測後の状態は</p>
+<p>$$\frac{M_0 \ket \psi}{|a|} = \frac{a}{|a|} \ket 0$$</p>
+<p>$$\frac{M_0 \ket \psi}{|b|} = \frac{b}{|b|} \ket 1$$</p>
+<p>となる. Sect. 2.2.7で$a/|a|$のような係数は実質無視でき,Chap. 1でみたように$\ket 0$か$\ket 1$の一方に確定する. (本では明示されていないが,2.93は観測によってある特定の$m$が得られたあとの状態空間のことなのだろう.)</p>
+<h4 id="224-distinguishing-quantum-states">2.2.4 Distinguishing quantum states</h4>
+<p>量子の世界では直交していない２つの状態を区別することが確率的にしかできない.</p>
+<p>proof (Box 2.3)</p>
+<p>ある観測$j$を得たときに状態が$i$であるというふうに推定する演算子$f: j \mapsto i$を考える.</p>
+<p>背理法を用いる. 非直交な$\ket \psi_1, \ket \psi_2$を区別できると仮定する. $\ket \psi_1$があるとき,$f(j)=1$であるような$j$を観測する確率(jが2つ以上あれば総和は)は1でなければならない.</p>
+<p>$E_i = \sum_{j: f(j)=1} M^\dagger_j M_j$とすれば</p>
+<p>$$\bra \psi_1 E_1 \ket \psi_1 = 1, \bra \psi_2 E_2 \ket \psi_2 = 1 \tag{2.99}$$</p>
+<p>である(行列演算の線形性).</p>
+<p>(2.94)より$\sum_i E_i = I$で. 行列演算の線形性から$\sum_i \bra \psi_i E_i \ket \psi_i = 1$.</p>
+<p>一方$\bra \psi_1 E_1 \ket \psi_1 = 1$だから$\bra \psi_2 E_2 \ket \psi_2 = 0$. 故に$\sqrt{E_2} \ket \psi_1 = 0.</p>
+<p>$\ket\psi_2$に正規直行する$\ket \phi$と$\ket \psi_1$によって$\ket \psi_2 = \alpha \ket \psi_1 + \beta \ket \phi$と分解する.</p>
+<p>$\ket \psi_1, \ket \psi_2$が正規直交でないなら,$|\beta| &lt;1$である.このとき</p>
+<p>$\sqrt{E_2} \ket \psi_2 = \beta \sqrt{E_2} \ket \phi$であって,</p>
+<p>$$\bra \psi_2 E_2 \ket \psi_2 = |\beta|2 \bra \phi E_2 \ket \phi \leq |\beta^2| &lt; 1 \tag{2.100}$$</p>
+<p>で(2.99)と矛盾.　Q.E.D.</p>
+
+    </div>
+  </div>
+  <div class="row pt-5 pb-5">
+    <div class="col-6 text-left">
+    
+      <a class="text-reset" href="https://nattochaduke.github.io/diary/posts/2020_06_05/">&lt; 量子情報3</a>
+    
+    </div>
+    <div class="col-6 text-right">
+    
+      <a class="text-reset" href="https://nattochaduke.github.io/diary/posts/2020_06_11/">量子情報5 ></a>
+    
+    </div>
+  </div>
+</div>
+<footer class="text-center bg-dark pt-5 col-12">
+  <a href="https://nattochaduke.github.io/diary" class="text-muted">Home</a>
+  
+  <a href="../../diary/posts" class="text-muted pl-4">About</a>
+  
+  <p class="pb-4 pt-4 mb-0">© 2020 copyright text. <a href="https://gohugo.io/" class="text-reset">hugo</a> <a href="https://10mohi6.tk" class="text-reset">10mohi6</a> <a href="https://github.com/10mohi6/hugo-theme-simple-blog" class="text-reset">simple-blog</a></p>
+</footer>
+</body>
+</html>
