@@ -1,11 +1,12 @@
-baseurl      = "https://nattochaduke.github.io/diary"
+baseurl      = "https://nattochaduke.github.io/diary/"
+relativeURLs = true
 publishDir = "docs"
 theme = "simple-blog_2"
 title = "日記"
 copyright = "© 2020 copyright text."
 paginate = 3
 languageCode = "en"
-DefaultContentLanguage = "jp"
+#DefaultContentLanguage = "jp"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
 
