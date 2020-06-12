@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2020 copyright text.</copyright>
-    <lastBuildDate>Thu, 11 Jun 2020 12:25:48 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 16:44:03 +0900</lastBuildDate>
     
 	<atom:link href="https://nattochaduke.github.io/diary/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>量子情報6</title>
+      <link>https://nattochaduke.github.io/diary/posts/2020_06_12/</link>
+      <pubDate>Fri, 12 Jun 2020 16:44:03 +0900</pubDate>
+      
+      <guid>https://nattochaduke.github.io/diary/posts/2020_06_12/</guid>
+      <description>Garg and Ramakrishnan, &amp;ldquo;Advances in Quantum Deep Learning: An Overview&amp;rdquo;, https://arxiv.org/abs/2005.04316 $$ \def\bra#1{\mathinner{\left\langle{#1}\right|}} \def\ket#1{\mathinner{\left|{#1}\right\rangle}} \def\braket#1#2{\mathinner{\left\langle{#1}\middle|#2\right\rangle}} $$
+4. Quantum Neural Network 4.1 Representing the input 古典的なニューラルネットワークは典型的には不可逆な操作(ReLUとかmax poolingとか)だが,すでに見たように量子コンピュータは可逆な操作しか許さないので,量子ニューラルネットワーク(QNN)は可逆であり,入力$x_1, &amp;hellip;, x_d$があって$y$を出力するときにはanciallary bitを挿入して
+$(x_1, &amp;hellip;, x_d, 0) \rightarrow (x_1&amp;rsquo;, x_2&amp;rsquo;, &amp;hellip;, x_d&amp;rsquo;, y)$という形になる(0がancillary bit) . $x_1. ,,, x_d$が古典びっとであるなら量子状態$\ket \psi _{1, &amp;hellip;, d}$に変換するので,量子の世界での操作は$\ket \psi {1. ,,d} \ket 0 \rightarrow \ket {\psi&amp;rsquo;}{1, &amp;hellip;, d} \ket y$というユニタリな操作となる.
+$\ket \psi _{1, &amp;hellip;, d}$は$2^d$個の計算基底の重ね合わせと考えることができて,つまり$\ket \psi _{1, &amp;hellip;, d} \in \mathcal{H}^{2^d} = \mathcal{H}^2 \otimes \cdots \otimes \mathcal{H}^2$, ここで$\mathcal{H}^2$は2-dim Hilbert spaceで基底は${\ket 0, \ket 1}$である.</description>
+    </item>
     
     <item>
       <title>量子情報5</title>
