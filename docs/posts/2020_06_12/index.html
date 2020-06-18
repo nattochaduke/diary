@@ -42,8 +42,9 @@ $$</p>
 <p>$(x_1, &hellip;, x_d, 0) \rightarrow (x_1&rsquo;, x_2&rsquo;, &hellip;, x_d&rsquo;, y)$という形になる(0がancillary bit) . $x_1. ,,, x_d$が古典びっとであるなら量子状態$\ket \psi _{1, &hellip;, d}$に変換するので,量子の世界での操作は$\ket \psi <em>{1. ,,d} \ket 0 \rightarrow \ket {\psi&rsquo;}</em>{1, &hellip;, d} \ket y$というユニタリな操作となる.</p>
 <p>$\ket \psi _{1, &hellip;, d}$は$2^d$個の計算基底の重ね合わせと考えることができて,つまり$\ket \psi _{1, &hellip;, d} \in \mathcal{H}^{2^d} = \mathcal{H}^2 \otimes \cdots \otimes \mathcal{H}^2$, ここで$\mathcal{H}^2$は2-dim Hilbert spaceで基底は${\ket 0, \ket 1}$である.</p>
 <p>また$\mathcal{H}^{2^d}$の基底は${\ket{0, 0, &hellip;, 0},&hellip;, \ket {1, 1, &hellip;, 1}}$である.</p>
-<p>したがって$\ket{\psi}<em>{1, &hellip;, d}=\sum</em>{i=1}^{2^d} a_i \ket {z_i}$と書ける.</p>
-<p>古典ビットを量子ビットに変換する方法はいくつか提案されていて,例えばある閾値を決めてバイナライズし,0ならばその量にあたるところの量子ビットを$\ket 0$,1ならば$\ket 1$とする方法があるが,この変換では明らかに情報の喪失が起こっている. その他の方法には,例えば$\ket i = \ket {0, 0, &hellip;, 1, &hellip;, 0}$($i$番目だけが$1$)をとして,$\ket \psi <em>{1, &hellip;, d} = \sum</em>{i=1}^d b_i \ket{i}, b_i = x_i/ |x|$</p>
+<p>したがって$\ket{\psi}_{1, &hellip;, d}=\sum^{2^d} a_i \ket{z_i}$と書ける.</p>
+<p>古典ビットを量子ビットに変換する方法はいくつか提案されていて,例えばある閾値を決めてバイナライズし,0ならばその量にあたるところの量子ビットを$\ket 0$,1ならば$\ket 1$とする方法があるが,この変換では明らかに情報の喪失が起こっている. その他の方法には,例えば$\ket i = \ket {0, 0, &hellip;, 1, &hellip;, 0}$($i$番目だけが$1$)をとして,</p>
+<p>$$\ket{\psi}_{1, &hellip;, d} = \sum^{d} b_i \ket{i}, , b_i = x_i/ |x|$$</p>
 <p>として変換を定める方法がある.</p>
 <p>さらに古典ビットをqubitの係数に埋め込む方法も提案されているが,実装が困難になる.</p>
 
@@ -56,6 +57,8 @@ $$</p>
     
     </div>
     <div class="col-6 text-right">
+    
+      <a class="text-reset" href="https://nattochaduke.github.io/diary/posts/2020_06_18/">量子情報7 ></a>
     
     </div>
   </div>

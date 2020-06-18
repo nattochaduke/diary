@@ -1,0 +1,103 @@
+<!doctype html>
+<script>
+    MathJax = {
+        tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+    };
+</script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>量子情報7 - 日記</title>
+    <link href="https://nattochaduke.github.io/diary/css/bootstrap.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+<header class="text-center bg-dark pt-5 pb-5 col-12">
+  
+  <h1 class="text-white pt-4 pb-3">量子情報7</h1>
+  <p class="text-secondary">June 18, 2020</p>
+  
+  <a href="https://nattochaduke.github.io/diary/tags/quantum-information/" class="text-info">#Quantum Information</a>
+  
+</header>
+<div class="container">
+  <div class="row pt-5">
+    <div class="col-12">
+      <p>$$
+\def\bra#1{\mathinner{\left\langle{#1}\right|}}
+\def\ket#1{\mathinner{\left|{#1}\right\rangle}}
+\def\braket#1#2{\mathinner{\left\langle{#1}\middle|#2\right\rangle}}
+$$</p>
+<h5 id="線形代数の復習">線形代数の復習</h5>
+<h4 id="外積outer-product">外積(outer product)</h4>
+<p>内積の定義されたベクトル空間$V, W$があって,$\ket v, \ket {v&rsquo;} \in V, \ket w \in W$とする.</p>
+<p>$V$から$W$への線形作用素$\ket w \bra v$を</p>
+<p>$$(\ket w \bra v)(\ket {v&rsquo;}) = \ket w \braket{v}{v&rsquo;} = \braket{v}{v&rsquo;}\ket w$$</p>
+<p>と定める. $\ket w \bra v$が$\ket {v&rsquo;}$に作用すると考えても,$\braket{v}{v&rsquo;} \in \mathbb{C}$が$\ket w$に掛けられると考えても良い.</p>
+<h6 id="completeness-relation">Completeness relation</h6>
+<p>${\ket i}$を$V$の正規直交基底とする.  $\ket v \in V$は$\sum_i v_i \ket i$と書ける. $\braket{i}{v} = v_i$である.</p>
+<p>$$\left(\sum_i \ket i \bra i\right) \ket v = \sum_i \ket i \braket{i}{v} = \sum_i v_i \ket i = \ket v$$</p>
+<p>が成立する. これが任意の$\ket v$に成り立つので,</p>
+<p>$$\sum_i \ket i \bra i = I$$</p>
+<p>この関係を<em>completeness relation</em>という. completeness relationによってあらゆる線形作用を外積表示できる. 例えば$A : V \rightarrow W$を線形作用,$\ket {v_i}$を$V$の正規直交基底,$\ket w_j$を$W$の正規直交基底とする.</p>
+<p>$$\begin{eqnarray}A &amp;= I_W AI_V \ &amp;= \sum_{i}(\ket {w_j} \bra{w_j})A \sum_j (\ket{v_i} \bra {v_i})\ &amp;=\sum_{ij} \ket {w_j} \bra{w_j} A\ket{v_i}\bra{v_i} \ &amp;=\sum_{ij} \bra{w_j}A\ket{v_i} \ket {w_j} \bra {v_i} \end{eqnarray}$$</p>
+<p>これを$A$の外積表示という.</p>
+<h4 id="adjoints-and-hermitian-operators">Adjoints and Hermitian operators</h4>
+<p>$V$上の作用素$A$で,任意の$\ket v, \ket w \in V$に</p>
+<p>$$\ket v, A \ket w) = ( A^\dagger \ket v, \ket w)$$</p>
+<p>を満たす$V$上の作用素$A^\dagger$が一意に存在し,$A$の <strong>エルミート転置</strong> (<em>Hermitian transpose</em>), <strong>エルミート共軛</strong> (<em>Hermitian conjugate</em>), <strong>エルミート随伴</strong> (<em>Hermitian adjoint</em>) あるいは<strong>随伴行列</strong>（ずいはんぎょうれつ、<a href="https://ja.wikipedia.org/wiki/%E8%8B%B1%E8%AA%9E">英</a>: <em>adjoint matrix</em>）<a href="https://ja.wikipedia.org/wiki/%E9%9A%8F%E4%BC%B4%E8%A1%8C%E5%88%97">wikipedia</a>という.</p>
+<p>$A$が行列ならば,$A^\dagger$は$A$の転置の複素共役である.</p>
+<h4 id="217-tensor-products">2.1.7 Tensor Products</h4>
+<p>$V, W$はそれぞれ次元$m, n$のヒルベルト空間とする. <em>mn</em>次元のヒルベルト空間$V \otimes W$を定義する. $V\otimes W$の元は$\ket v \in V, \ket w \in W$のテンソル積$\ket v \otimes \ket w$の線型結合である.  特に$\ket i, \ket j$を$V, W$の正規直交基底とすると$\ket i \otimes \ket j$は$V \otimes W$の基底である. $\ket v \ket w, \ket{v, w}, \ket{vw}$を$\ket v \otimes \ket w$の略として使うことがある.</p>
+<p>$A, B$がそれぞれ$V, W$での線形作用素とすると,$V \otimes W$上の線形作用素$A \otimes B$を</p>
+<p>$$(A \otimes B) (\ket v \otimes \ket w) = A \ket v \otimes B \ket w$$</p>
+<p>と定める. $V \otimes W$の内積も自然に導入できる.</p>
+<p>$A, B$の行列表示から$A \otimes B$の行列表示を求めるのが<em>Kronecker product</em>で,単に$\otimes$と書く.</p>
+<p>$A, B$がそれぞれ$(m, n), (p, q)$行列であるとすると,</p>
+<p>$$A \otimes B = (ab_{ij}), ab_{ij} = A_{ij}B$$</p>
+<p>の$(nq, mp)$行列が得られる.</p>
+<h4 id="218-operator-functions">2.1.8 Operator functions</h4>
+<p>$f: \mathbb{C} \rightarrow \mathbb{C}$があるとき,正規行列($AA^\dagger = A^\dagger A$)に$f$の操作を行える. 以下のように構成する.</p>
+<p>$A$を$A = \sum a \ket a \bra a$とスペクトル分解して</p>
+<p>$$f(A) = \sum f(a) \ket a \bra a$$</p>
+<p>$f(A)$は$A$に一意である.</p>
+<p>これによって行列の根やlogを得られる.</p>
+<h5 id="trace">Trace</h5>
+<p>traceは正方行列の体格成分の和</p>
+<p>$$tr(A) = \sum_i A_{ii}$$</p>
+<p>$tr(AB) = tr(BA), tr(A+B) = tr(A) + tr(B), tr(zA) = ztr(A)$</p>
+<p>$U$がユニタリ行列ならば$tr(UAU^dagger) = tr(U^\dagger UA) = tr(A)$</p>
+<p>$\ket \psi$が単位ベクトルで$A$が任意の正方行列とする.</p>
+<p>$tr(A \ket \psi \bra \psi)$を評価する. $\ket \psi$を最初の基底とし,Gram-Schmidtによって正規直交基底$\ket i$を得る.</p>
+<p>$$tr(A\ket \psi \bra \psi) = \sum_i \bra i A \ket \psi \braket{\psi}{i} = \bra \psi A \ket \psi$$</p>
+<p>$tr(A\ket \psi \bra \psi) = \bra \psi A \ket \psi$多用される関係である.</p>
+
+    </div>
+  </div>
+  <div class="row pt-5 pb-5">
+    <div class="col-6 text-left">
+    
+      <a class="text-reset" href="https://nattochaduke.github.io/diary/posts/2020_06_12/">&lt; 量子情報6</a>
+    
+    </div>
+    <div class="col-6 text-right">
+    
+    </div>
+  </div>
+</div>
+<footer class="text-center bg-dark pt-5 col-12">
+  <a href="https://nattochaduke.github.io/diary/" class="text-muted">Home</a>
+  
+  <a href="../../diary/posts" class="text-muted pl-4">About</a>
+  
+  <p class="pb-4 pt-4 mb-0">© 2020 copyright text. <a href="https://gohugo.io/" class="text-reset">hugo</a> <a href="https://10mohi6.tk" class="text-reset">10mohi6</a> <a href="https://github.com/10mohi6/hugo-theme-simple-blog" class="text-reset">simple-blog</a></p>
+</footer>
+</body>
+</html>

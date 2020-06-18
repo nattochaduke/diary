@@ -25,11 +25,40 @@
   
   <h1 class="text-white pt-5 pb-3">Posts</h1>
   <p class="text-white pb-4 text-muted">
-    <a href="https://nattochaduke.github.io/diary/" class="text-reset pr-4">Back to Home</a>7 Articles to read
+    <a href="https://nattochaduke.github.io/diary/" class="text-reset pr-4">Back to Home</a>8 Articles to read
   </p>
   
 </header>
 <div class="container pt-3">
+  
+  <div class="row pt-3 pb-3">
+    <div class="col-12">
+      
+      <h2 class="pt-1">
+        <a href="https://nattochaduke.github.io/diary/posts/2020_06_09/" class="text-dark">量子情報4</a>
+      </h2>
+      <p class="text-secondary">June 9, 2020</p>
+      <div class="pb-1">
+        量子情報4日目 (Nielsen and Chuang, Quantum Computation and Quantum Information) $$ \def\bra#1{\mathinner{\left\langle{#1}\right|}} \def\ket#1{\mathinner{\left|{#1}\right\rangle}} \def\braket#1#2{\mathinner{\left\langle{#1}\middle|#2\right\rangle}} $$
+2.2 The postulates of quantum mechanics 公準1 ある物理系に紐付けられた内積の入った複素ベクトル空間をその系のstate space状態空間という. その系はその状態空間の単位ベクトルであるstate vectorによって完全に記述できる.
+公準2 閉じた系の時間発展はユニタリ変換であり,離散時間の時間発展はユニタリ行列$U$によって
+$$\ket {\psi’} = U\ket \psi$$
+と書ける.また連続時間の場合には
+$$i\frac{d\ket \psi}{dt} = H \ket \psi$$
+と書ける.この方程式の解は
+$$U(t_1, t_2) = \exp{\frac{-iH(t_2-t_1)}{\hbar}}$$
+であり,$U$はユニタリである.
+2.2.3 Quantum measurement 閉じた系の量子力学的時間発展はユニタリ作用素で記述できるが,中で何が起きているのか観測するとその系は開く. 観測を定式化することを考える.
+公準3 量子観測は${M_m}$という観測作用素の集合によって表現される. $M_m$は状態空間に作用する. $m$は観測で得られる結果で,$\ket \psi$を観測して$m$が得られる確率は
+$$p(m) = \bra{\psi} M^\dagger _m M_m \ket {\psi}$$
+であり,観測後の状態空間は
+$$\frac{M_m \ket {\psi}}{\sqrt{\bra{\psi} M^\dagger _m M_m \ket {\psi}}} \tag{2.
+      </div>
+      
+      <a href="https://nattochaduke.github.io/diary/tags/quantum-information/" class="text-info">#Quantum Information</a>
+      
+    </div>
+  </div>
   
   <div class="row pt-3 pb-3">
     <div class="col-12">
@@ -65,28 +94,6 @@ $\ket \psi \ket 0 = (a, 0, b, 0)^T$. CNOTを作用させると
 $\ket c = \alpha \ket 0 &#43; \beta \ket 1, \ket t = \gamma \ket 0 &#43; \delta \ket 1$
 であるとき,
 $$\ket {ct} = \ket c \otimes \ket t = \alpha\gamma \ket {0 0} &#43; \alpha \delta \ket {0 1} &#43; \beta \gamma \ket{1 0} &#43; \beta \delta \ket {1 1}$$
-      </div>
-      
-      <a href="https://nattochaduke.github.io/diary/tags/quantum-information/" class="text-info">#Quantum Information</a>
-      
-    </div>
-  </div>
-  
-  <div class="row pt-3 pb-3">
-    <div class="col-12">
-      
-      <h2 class="pt-1">
-        <a href="https://nattochaduke.github.io/diary/posts/2020_06_02/" class="text-dark">量子情報1</a>
-      </h2>
-      <p class="text-secondary">June 2, 2020</p>
-      <div class="pb-1">
-        量子情報1日目 (Nielsen and Chuang, Quantum Computation and Quantum Information) $$ \def\bra#1{\mathinner{\left\langle{#1}\right|}} \def\ket#1{\mathinner{\left|{#1}\right\rangle}} \def\braket#1#2{\mathinner{\left\langle{#1}\middle|#2\right\rangle}} $$
-1.2 Quantum bits quantum bit (qubit) は量子情報の最小単位. 古典的なbitに0と1の状態(state)があるように,qbitも
-$\ket{0}$, $\ket{1}$ という状態を持っている一方, $\ket 0$と$\ket 1$の線型結合$\alpha \ket 0 &#43; \beta \ket 1$という状態を許す. これをsuperposition (重ね合わせ) といい,
-$$\ket \psi = \alpha \ket 0 &#43; \beta \ket 1 , \alpha, \beta \in \mathbb{C} \tag{1.1} $$
-のように書く.
-$\ket \psi$を観測すると必ず$\ket 0$か$\ket 1$が得られ,$\ket 0$が得られる確率は$|\alpha|^2$, $\ket 1$が得られる可能性は$|\beta|^2$で,確率の原理から$|\alpha|^2 &#43; |\beta|^2=1$が成立する. $\ket \psi$は2次元複素ベクトル空間上の単位ベクトルと考えることができる. この条件から(1. 1)を
-$$\ket \psi = e^{i \gamma} \left( \cos \frac{\theta}{2} \ket 0 &#43; e^{i\phi} \sin \frac{\theta}{2} \ket 1 \right) \tag{1.
       </div>
       
       <a href="https://nattochaduke.github.io/diary/tags/quantum-information/" class="text-info">#Quantum Information</a>

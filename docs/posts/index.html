@@ -25,11 +25,33 @@
   
   <h1 class="text-white pt-5 pb-3">Posts</h1>
   <p class="text-white pb-4 text-muted">
-    <a href="https://nattochaduke.github.io/diary/" class="text-reset pr-4">Back to Home</a>7 Articles to read
+    <a href="https://nattochaduke.github.io/diary/" class="text-reset pr-4">Back to Home</a>8 Articles to read
   </p>
   
 </header>
 <div class="container pt-3">
+  
+  <div class="row pt-3 pb-3">
+    <div class="col-12">
+      
+      <h2 class="pt-1">
+        <a href="https://nattochaduke.github.io/diary/posts/2020_06_18/" class="text-dark">量子情報7</a>
+      </h2>
+      <p class="text-secondary">June 18, 2020</p>
+      <div class="pb-1">
+        $$ \def\bra#1{\mathinner{\left\langle{#1}\right|}} \def\ket#1{\mathinner{\left|{#1}\right\rangle}} \def\braket#1#2{\mathinner{\left\langle{#1}\middle|#2\right\rangle}} $$
+線形代数の復習 外積(outer product) 内積の定義されたベクトル空間$V, W$があって,$\ket v, \ket {v’} \in V, \ket w \in W$とする.
+$V$から$W$への線形作用素$\ket w \bra v$を
+$$(\ket w \bra v)(\ket {v’}) = \ket w \braket{v}{v’} = \braket{v}{v’}\ket w$$
+と定める. $\ket w \bra v$が$\ket {v’}$に作用すると考えても,$\braket{v}{v’} \in \mathbb{C}$が$\ket w$に掛けられると考えても良い.
+Completeness relation ${\ket i}$を$V$の正規直交基底とする. $\ket v \in V$は$\sum_i v_i \ket i$と書ける. $\braket{i}{v} = v_i$である.
+$$\left(\sum_i \ket i \bra i\right) \ket v = \sum_i \ket i \braket{i}{v} = \sum_i v_i \ket i = \ket v$$
+      </div>
+      
+      <a href="https://nattochaduke.github.io/diary/tags/quantum-information/" class="text-info">#Quantum Information</a>
+      
+    </div>
+  </div>
   
   <div class="row pt-3 pb-3">
     <div class="col-12">
@@ -70,35 +92,6 @@ $$M = \sum_m m P_m$$
 $$A(x_1 … x_n) = (x …, x_n) \text{diag}(\lambda_1 …., \lambda_n)$$
 $(x_1 … x_n)$はユニタリ行列($\Leftrightarrow$列が正規直交基底をなす)だから,
 $$A = (x_1 … x_n) \text{diag} (\lambda_1, …, \lambda_n) (x^*_1 , …, x^*_n)^T \ = \sum_i \lambda_i x_i x_i^*$$
-      </div>
-      
-      <a href="https://nattochaduke.github.io/diary/tags/quantum-information/" class="text-info">#Quantum Information</a>
-      
-    </div>
-  </div>
-  
-  <div class="row pt-3 pb-3">
-    <div class="col-12">
-      
-      <h2 class="pt-1">
-        <a href="https://nattochaduke.github.io/diary/posts/2020_06_09/" class="text-dark">量子情報4</a>
-      </h2>
-      <p class="text-secondary">June 9, 2020</p>
-      <div class="pb-1">
-        量子情報4日目 (Nielsen and Chuang, Quantum Computation and Quantum Information) $$ \def\bra#1{\mathinner{\left\langle{#1}\right|}} \def\ket#1{\mathinner{\left|{#1}\right\rangle}} \def\braket#1#2{\mathinner{\left\langle{#1}\middle|#2\right\rangle}} $$
-2.2 The postulates of quantum mechanics 公準1 ある物理系に紐付けられた内積の入った複素ベクトル空間をその系のstate space状態空間という. その系はその状態空間の単位ベクトルであるstate vectorによって完全に記述できる.
-公準2 閉じた系の時間発展はユニタリ変換であり,離散時間の時間発展はユニタリ行列$U$によって
-$$\ket {\psi’} = U\ket \psi$$
-と書ける.また連続時間の場合には
-$$i\frac{d\ket \psi}{dt} = H \ket \psi$$
-と書ける.この方程式の解は
-$$U(t_1, t_2) = \exp{\frac{-iH(t_2-t_1)}{\hbar}}$$
-であり,$U$はユニタリである.
-2.2.3 Quantum measurement 閉じた系の量子力学的時間発展はユニタリ作用素で記述できるが,中で何が起きているのか観測するとその系は開く. 観測を定式化することを考える.
-公準3 量子観測は${M_m}$という観測作用素の集合によって表現される. $M_m$は状態空間に作用する. $m$は観測で得られる結果で,$\ket \psi$を観測して$m$が得られる確率は
-$$p(m) = \bra{\psi} M^\dagger _m M_m \ket {\psi}$$
-であり,観測後の状態空間は
-$$\frac{M_m \ket {\psi}}{\sqrt{\bra{\psi} M^\dagger _m M_m \ket {\psi}}} \tag{2.
       </div>
       
       <a href="https://nattochaduke.github.io/diary/tags/quantum-information/" class="text-info">#Quantum Information</a>

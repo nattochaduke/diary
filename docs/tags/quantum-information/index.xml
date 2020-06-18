@@ -7,10 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2020 copyright text.</copyright>
-    <lastBuildDate>Fri, 12 Jun 2020 16:44:03 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:29:55 +0900</lastBuildDate>
     
 	<atom:link href="https://nattochaduke.github.io/diary/tags/quantum-information/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>量子情報7</title>
+      <link>https://nattochaduke.github.io/diary/posts/2020_06_18/</link>
+      <pubDate>Thu, 18 Jun 2020 09:29:55 +0900</pubDate>
+      
+      <guid>https://nattochaduke.github.io/diary/posts/2020_06_18/</guid>
+      <description>$$ \def\bra#1{\mathinner{\left\langle{#1}\right|}} \def\ket#1{\mathinner{\left|{#1}\right\rangle}} \def\braket#1#2{\mathinner{\left\langle{#1}\middle|#2\right\rangle}} $$
+線形代数の復習 外積(outer product) 内積の定義されたベクトル空間$V, W$があって,$\ket v, \ket {v&amp;rsquo;} \in V, \ket w \in W$とする.
+$V$から$W$への線形作用素$\ket w \bra v$を
+$$(\ket w \bra v)(\ket {v&amp;rsquo;}) = \ket w \braket{v}{v&amp;rsquo;} = \braket{v}{v&amp;rsquo;}\ket w$$
+と定める. $\ket w \bra v$が$\ket {v&amp;rsquo;}$に作用すると考えても,$\braket{v}{v&amp;rsquo;} \in \mathbb{C}$が$\ket w$に掛けられると考えても良い.
+Completeness relation ${\ket i}$を$V$の正規直交基底とする. $\ket v \in V$は$\sum_i v_i \ket i$と書ける. $\braket{i}{v} = v_i$である.
+$$\left(\sum_i \ket i \bra i\right) \ket v = \sum_i \ket i \braket{i}{v} = \sum_i v_i \ket i = \ket v$$</description>
+    </item>
     
     <item>
       <title>量子情報6</title>
